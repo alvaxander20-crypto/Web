@@ -1,13 +1,11 @@
 /* ============================================================
    ESTILO PRINCIPAL - ECOS DEL OLIMPO
    Autor: Alexander Alvarado
-   Notas: Este archivo controla la magia visual de la página.
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
 
-/* --- RESET BÁSICO --- 
-   Limpia los márgenes por defecto del navegador */
+/* --- RESET BÁSICO --- */
 * { 
     box-sizing: border-box; 
 }
@@ -27,35 +25,26 @@ body, html {
    SISTEMA DE CAPAS (Lógica de acceso)
    ============================================================ */
 
-/* CAPA 1: EL FORMULARIO (Se mantiene fijo al fondo) */
+/* CAPA 1: EL FORMULARIO (Se ve al entrar) */
 #puerta-entrada {
-    position: fixed;
-    top: 0;
-    left: 0;
+    position: relative; /* Cambiado de fixed a relative para fluidez */
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #001219;
+    background: linear-gradient(rgba(0,18,25,0.8), rgba(0,18,25,0.8)), url('../img/dioses.jpg');
+    background-size: cover;
+    background-position: center;
     z-index: 100;
 }
 
-/* CAPA 2: EL CONTENIDO (Cubre la entrada al activarse) */
+/* CAPA 2: EL CONTENIDO (Se muestra al presionar el botón) */
 #contenido-principal {
-    display: none; /* Oculto hasta que el usuario "entra" */
+    display: block; /* Ahora es visible pero está debajo de la puerta */
     width: 100%;
-    background: #f2f2f2; /* Color sólido para tapar el formulario */
-    position: absolute;
-    top: 0;
-    left: 0;
+    background: #f2f2f2;
     min-height: 100vh;
-    z-index: 200; /* Prioridad alta */
-}
-
-/* LA MAGIA: Activa el contenido cuando la URL tiene #contenido-principal */
-#contenido-principal:target {
-    display: block;
 }
 
 /* ============================================================
@@ -63,7 +52,7 @@ body, html {
    ============================================================ */
 
 header {
-    background: #003366; /* Azul profundo real */
+    background: #003366;
     color: white;
     padding: 15px 20px;
     display: flex;
@@ -85,6 +74,9 @@ header {
     border: 2px solid #C5A059; 
 }
 
+.header-texto h1 { margin: 0; font-size: 1.4rem; }
+.firma-autor { margin: 0; font-size: 0.8rem; color: #C5A059; }
+
 .menu ul { 
     display: flex; 
     list-style: none; 
@@ -101,9 +93,7 @@ header {
     font-size: 0.95rem; 
 }
 
-.menu a:hover { 
-    color: #C5A059; /* Dorado al pasar el mouse */
-}
+.menu a:hover { color: #C5A059; }
 
 /* ============================================================
    CONTENEDOR DE VIDEO
@@ -114,7 +104,7 @@ header {
     height: 400px;
     position: relative;
     background: black;
-    border-bottom: 4px solid #C5A059; /* Línea dorada divisoria */
+    border-bottom: 4px solid #C5A059;
     overflow: hidden;
 }
 
@@ -126,7 +116,7 @@ header {
 }
 
 /* ============================================================
-   TARJETAS DE LOS DIOSES (Ajuste de caras)
+   TARJETAS DE LOS DIOSES
    ============================================================ */
 
 .container-dioses {
@@ -144,34 +134,17 @@ header {
     border-radius: 15px;
     text-align: center;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    transition: 0.3s;
 }
 
-.tarjetas:hover { 
-    transform: translateY(-5px); 
-    box-shadow: 0 8px 25px rgba(0,0,0,0.2); 
-}
+.tarjetas:hover { transform: translateY(-5px); }
 
-/* Nota: 'contain' asegura que se vea toda la cara de la deidad */
 .tarjetas img { 
     width: 100%; 
     height: 220px; 
     object-fit: contain; 
     background: #f9f9f9; 
     border-radius: 10px; 
-    margin-bottom: 15px;
-    padding: 5px;
-}
-
-.tarjetas h4 { 
-    margin: 10px 0; 
-    font-size: 1.2rem; 
-}
-
-.tarjetas a { 
-    text-decoration: none; 
-    color: #003366; 
-    font-weight: bold; 
 }
 
 /* ============================================================
@@ -180,32 +153,28 @@ header {
 
 .tarjeta-registro {
     background: white;
-    padding: 40px;
-    border-radius: 10px;
+    padding: 30px;
+    border-radius: 15px;
     border: 3px solid #C5A059;
-    width: 90%;
-    max-width: 450px;
-    box-shadow: 0 0 50px rgba(197, 160, 89, 0.2);
+    width: 95%;
+    max-width: 400px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
-.campo { 
-    margin-bottom: 20px; 
-    text-align: left; 
+.titulo-form {
+    color: #003366;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
 }
 
-.campo label { 
-    display: block; 
-    font-weight: bold; 
-    margin-bottom: 8px; 
-    color: #003366; 
-}
-
+.campo { margin-bottom: 15px; }
+.campo label { display: block; font-weight: bold; margin-bottom: 5px; color: #003366; }
 .campo input { 
     width: 100%; 
-    padding: 12px; 
+    padding: 10px; 
     border: 1px solid #ccc; 
     border-radius: 5px; 
-    font-size: 1rem; 
 }
 
 .boton-divino {
@@ -215,60 +184,22 @@ header {
     border: none;
     border-radius: 5px;
     font-weight: bold;
-    font-size: 1rem;
+    width: 100%;
     cursor: pointer;
-    text-transform: uppercase;
     transition: 0.3s;
 }
 
-.boton-divino:hover { 
-    background: #8E3524; 
-    letter-spacing: 1px; 
-}
+.boton-divino:hover { background: #8E3524; }
 
 /* ============================================================
-   FUENTES Y REDES SOCIALES
-   ============================================================ */
-
-#fuentes-investigacion {
-    background: white;
-    padding: 50px 20px;
-    text-align: center;
-    border-top: 5px solid #003366;
-}
-
-.separador-dorado { 
-    height: 3px; 
-    width: 60px; 
-    background: #C5A059; 
-    margin: 10px auto 30px auto; 
-}
-
-.redes {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 10px;
-}
-
-.iconos {
-    width: 50px;
-    height: auto;
-    transition: transform 0.3s ease;
-}
-
-.iconos:hover {
-    transform: scale(1.2) rotate(5deg);
-}
-
-/* ============================================================
-   PIE DE PÁGINA
+   FOOTER Y REDES
    ============================================================ */
 
 footer {
-    background: #005691;
+    background: #003366;
     color: white;
     padding: 20px;
     text-align: center;
-    font-size: 0.9rem;
-  }
+}
+
+.redes .iconos { width: 40px; margin: 0 10px; }
