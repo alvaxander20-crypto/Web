@@ -1,0 +1,187 @@
+/* ============================================================
+   ESTILO: DIOSES TITANES
+   Este diseño usa tonos tierra y bronce para evocar la era 
+   antigua y rústica de los regentes anteriores al Olimpo.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
+
+/* --- CONFIGURACIÓN GENERAL --- 
+   Establece la atmósfera oscura y terrenal de la página */
+body {
+    font-family: 'Marcellus', serif;
+    margin: 0;
+    background-color: #12100e; /* Negro café, tierra profunda */
+    color: #e0d5c1; /* Crema envejecido para facilitar la lectura */
+}
+
+/* --- SECCIÓN DE BIENVENIDA --- */
+#intro {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(to bottom, #2b2118, #12100e);
+    border-bottom: 2px solid #8b5a2b; /* Bronce rústico */
+}
+
+h1 {
+    color: #cd7f32; /* Color Bronce principal */
+    font-size: 3.5rem;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+/* --- CONTENEDOR DE TARJETAS --- */
+.container-titanes {
+    display: flex;
+    flex-direction: column; /* Alinea los titanes uno debajo de otro */
+    align-items: center;
+    padding: 40px 10px;
+}
+
+/* --- LA TARJETA DEL TITÁN --- 
+   Diseño horizontal: Imagen a la izquierda, Texto a la derecha */
+.tarjetas {
+    display: flex;
+    flex-direction: row; 
+    width: 95%;
+    max-width: 950px;
+    background: #1c1814;
+    border: 2px solid #8b5a2b; 
+    border-radius: 4px; /* Bordes rectos para un estilo más antiguo/monumental */
+    margin-bottom: 40px;
+    padding: 25px;
+    gap: 35px;
+    align-items: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+    transition: all 0.4s ease;
+}
+
+/* Efecto de iluminación y movimiento al pasar el cursor */
+.tarjetas:hover {
+    transform: scale(1.02) translateX(5px);
+    border-color: #cd7f32;
+    box-shadow: 0 0 25px rgba(205, 127, 50, 0.4);
+}
+
+/* --- IMAGEN DEL TITÁN --- */
+.tarjetas img {
+    width: 280px;
+    height: 380px;      /* Altura fija para mantener la simetría */
+    object-fit: cover;  /* Recorta la imagen para que llene el recuadro sin deformarse */
+    flex-shrink: 0;     /* Evita que la imagen se aplaste en pantallas pequeñas */
+    border-radius: 4px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
+    border: 1px solid #4a3728;
+}
+
+/* --- BLOQUE DE TEXTO --- */
+.contenido-texto {
+    flex: 1; /* Permite que el texto ocupe el espacio restante */
+}
+
+.contenido-texto h2 {
+    color: #cd7f32;
+    margin-top: 0;
+    font-size: 2.2rem;
+    border-bottom: 1px solid #4a3728;
+    padding-bottom: 10px;
+}
+
+.contenido-texto p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    text-align: justify;
+    color: #c4b9a6;
+}
+
+/* ============================================================
+   NAVEGACIÓN ENTRE PÁGINAS (ESTILO RÚSTICO)
+   ============================================================ */
+
+.navegacion-divina {
+    background: #0a0908;
+    padding: 60px 20px;
+    text-align: center;
+    border-top: 2px solid #8b5a2b;
+}
+
+.titulo-nav {
+    color: #cd7f32;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.contenedor-enlaces {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Botones con estilo de piedra tallada */
+.tarjeta-enlace {
+    text-decoration: none;
+    color: #cd7f32;
+    border: 1px solid #cd7f32;
+    padding: 12px 25px;
+    border-radius: 2px; 
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    background: rgba(205, 127, 50, 0.05);
+}
+
+.tarjeta-enlace:hover {
+    background: #cd7f32;
+    color: #12100e;
+    box-shadow: 0 0 15px rgba(205, 127, 50, 0.5);
+    transform: translateY(-3px);
+}
+
+/* ============================================================
+   PIE DE PÁGINA Y REDES SOCIALES
+   ============================================================ */
+
+footer {
+    background: #0a0908;
+    padding: 40px;
+    text-align: center;
+    border-top: 3px solid #cd7f32;
+}
+
+.redes {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 15px;
+}
+
+.redes img {
+    width: 35px;
+    /* Filtro especial para que los iconos de redes se vean color Bronce */
+    filter: sepia(1) saturate(5) hue-rotate(350deg); 
+}
+
+/* ============================================================
+   AJUSTES DE ENCUADRE DE ROSTROS (Mago del CSS)
+   Estos selectores apuntan a tarjetas específicas para 
+   centrar la cara del Titán según la imagen usada.
+   ============================================================ */
+
+/* Ajuste para la 4ta tarjeta: Themis */
+.tarjetas:nth-of-type(4) img {
+    object-position: center 15%; /* Sube el foco para mostrar la cara */
+}
+
+/* Ajuste para la 5ta tarjeta: Rea */
+.tarjetas:nth-of-type(5) img {
+    object-position: center 10%; /* Ajuste fino superior */
+}
+
+/* Ajuste para la 6ta tarjeta: Mnemosyne */
+.tarjetas:nth-of-type(6) img {
+    object-position: center 20%; /* Enfoca la parte superior del busto */
+}
