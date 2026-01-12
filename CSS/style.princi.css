@@ -25,27 +25,35 @@ body, html {
    SISTEMA DE CAPAS (Lógica de acceso)
    ============================================================ */
 
-/* CAPA 1: EL FORMULARIO (Se ve al entrar) */
+/* CAPA 1: LA PUERTA (Ocupa todo y no deja ver lo de abajo) */
 #puerta-entrada {
-    position: relative; /* Cambiado de fixed a relative para fluidez */
+    position: fixed; /* Se queda pegado a la pantalla */
+    top: 0;
+    left: 0;
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(rgba(0,18,25,0.8), rgba(0,18,25,0.8)), url('../img/dioses.jpg');
-    background-size: cover;
-    background-position: center;
-    z-index: 100;
+    background: #001219;
+    z-index: 1000; /* Siempre por encima de todo */
 }
 
-/* CAPA 2: EL CONTENIDO (Se muestra al presionar el botón) */
+/* CAPA 2: EL CONTENIDO (Invisible al inicio) */
 #contenido-principal {
-    display: block; /* Ahora es visible pero está debajo de la puerta */
-    width: 100%;
-    background: #f2f2f2;
-    min-height: 100vh;
+    display: none; /* EL MURO: El contenido no existe para el navegador todavía */
 }
+
+/* LA MAGIA: Solo cuando el usuario pulsa "Acceder", el contenido aparece */
+#contenido-principal:target {
+    display: block;
+}
+
+/* Escondemos la puerta cuando el contenido está activo */
+#contenido-principal:target ~ #puerta-entrada {
+    display: none;
+}
+
 
 /* ============================================================
    DISEÑO DEL HEADER Y MENÚ
