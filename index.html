@@ -3,44 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Ecos del Olimpo | Alexander Alvarado</title>
-    <link rel="stylesheet" href="CSS/style.princi.css">
+    <link rel="stylesheet" href="CSS/style.princi.CSS">
 </head>
 <body>
 
-    <section id="puerta-entrada">
-        <div class="tarjeta-registro">
-            <h1 class="titulo-form">Registro de Datos</h1>
-            <p style="text-align: center; color: gold;">Identifícate para entrar al Reino</p>
-            <form action="#contenido-principal"> 
-                <fieldset style="border: none; padding: 0;">
-                    <div class="campo">
-                        <label>Nombre:</label>
-                        <input type="text" required placeholder="Ej: Alexander">
-                    </div>
-                    <div class="campo">
-                        <label>Apellido:</label>
-                        <input type="text" required placeholder="Ej: Alvarado">
-                    </div>
-                    <div class="campo">
-                        <label>Cédula:</label>
-                        <input type="text" placeholder="V-12345678" required>
-                    </div>
-                    <div class="campo">
-                        <label>Correo Electrónico:</label>
-                        <input type="email" required placeholder="correo@ejemplo.com">
-                    </div>
-                    <div class="campo">
-                        <label>Clave:</label>
-                        <input type="password" required placeholder="Mínimo 8 caracteres">
-                    </div>
-                    <button type="submit" class="boton-divino" style="width: 100%; margin-top: 15px; cursor: pointer;">Acceder al Olimpo</button>
-                </fieldset>
-            </form>
-        </div>
-    </section>
-
     <div id="contenido-principal">
-        
         <header>
             <div class="logo-caja">
                 <img src="img/dioses.jpg" alt="Logo Olimpo" class="logo">
@@ -56,7 +23,6 @@
                     <li><a href="titan.html">Titanes</a></li>
                     <li><a href="olimpo.html">Olímpicos</a></li>
                     <li><a href="dedifica.html">Deificados</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
                 </ul>
             </nav>
         </header>
@@ -64,57 +30,53 @@
         <div class="video-contenedor">
             <video autoplay muted loop playsinline class="video-presentacion">
                 <source src="img/video_olimpo.mp4" type="video/mp4">
-                Tu navegador no soporta videos.
             </video>
-            <div class="overlay-video"></div>
         </div>
 
         <main class="container">
             <section id="intro" style="text-align: center; padding: 40px 20px;">
                 <h2>Bienvenido a los Registros de Alexander Alvarado</h2>
-                <p>Descubre a los fascinantes dioses de la mitología griega. Aquí exploraremos desde los <strong>Dioses Primordiales</strong>, que nacieron del Caos, hasta los héroes que trascendieron su humanidad.</p>
+                <p>Explora la genealogía de los dioses griegos.</p>
             </section>
 
             <section class="container-dioses">
                 <div class="tarjetas">
                     <h4><a href="pri.html">Dioses Primordiales</a></h4>
-                    <a href="pri.html"><img src="img/urano.jpg" alt="Urano"></a>
-                    <p>Explora a los creadores del todo y descendientes del Caos.</p>
+                    <img src="img/urano.jpg" alt="Urano">
                 </div>
-
                 <div class="tarjetas">
                     <h4><a href="titan.html">Dioses Titanes</a></h4>
-                    <a href="titan.html"><img src="img/cronos.jpg" alt="Cronos"></a>
-                    <p>Desvela quiénes fueron los gigantes que derrocaron a Urano.</p>
-                </div>
-
-                <div class="tarjetas">
-                    <h4><a href="olimpo.html">Dioses Olímpicos</a></h4>
-                    <a href="olimpo.html"><img src="img/zeus.jpg" alt="Zeus"></a>
-                    <p>Descubre a los regentes actuales del Monte Olimpo.</p>
-                </div>
-
-                <div class="tarjetas">
-                    <h4><a href="dedifica.html">Mortales Deificados</a></h4>
-                    <a href="dedifica.html"><img src="img/heracles.jpg" alt="Heracles"></a>
-                    <p>Conoce la historia de aquellos que lograron alcanzar la divinidad.</p>
+                    <img src="img/cronos.jpg" alt="Cronos">
                 </div>
             </section>
         </main>
 
-        <section id="fuentes-investigacion">
-            <div class="contenido-fuentes">
-                <h3>Fuentes de Investigación</h3>
-                <div class="separador-dorado"></div>
-                <ul style="text-align: left; display: inline-block;">
-                    <li><strong>Theoi Project:</strong> Compendio exhaustivo de literatura griega.</li>
-                </ul>
-            </div>
-        </section>
-
         <footer>
-            <p>&copy; 2026 Ecos del Olimpo | Todos los derechos reservados.</p>
+            <p>&copy; 2026 Ecos del Olimpo | Alexander Alvarado</p>
         </footer>
     </div>
+
+    <section id="puerta-entrada">
+        <div class="tarjeta-registro">
+            <h1 class="titulo-form">Acceso al Olimpo</h1>
+            <p style="color: #666; margin-bottom: 20px;">Usa tus datos universitarios</p>
+            <form action="#contenido-principal"> 
+                <div class="campo">
+                    <label>Nombre Completo:</label>
+                    <input type="text" required placeholder="Tu nombre">
+                </div>
+                <div class="campo">
+                    <label>Correo Estudiantil:</label>
+                    <input type="email" required placeholder="usuario@universidad.edu">
+                </div>
+                <div class="campo">
+                    <label>Código de Acceso (Cédula):</label>
+                    <input type="password" required placeholder="Tu identificación">
+                </div>
+                <button type="submit" class="boton-divino">Entrar al Reino</button>
+            </form>
+        </div>
+    </section>
+
 </body>
 </html>
