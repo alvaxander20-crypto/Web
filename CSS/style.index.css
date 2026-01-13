@@ -172,3 +172,35 @@ header {
 
 footer { background: #003366; color: white; padding: 20px; text-align: center; font-size: 0.9rem; }
    
+/* ============================================================
+   BLOQUEO FINAL PARA LA UNIVERSIDAD (Añadir al final)
+   ============================================================ */
+
+/* 1. La puerta se queda fija y tapa todo */
+#puerta-entrada {
+    position: fixed !important; /* El !important asegura que nadie lo mueva */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #001219; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* 2. El contenido principal está oculto de verdad */
+#contenido-principal {
+    display: none;
+}
+
+/* 3. La magia: cuando el usuario pulsa "Entrar" */
+#contenido-principal:target {
+    display: block;
+}
+
+/* 4. Al entrar, la puerta se desvanece */
+#contenido-principal:target ~ #puerta-entrada {
+    display: none !important;
+}
